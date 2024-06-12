@@ -1,0 +1,14 @@
+<h1>
+    Employee Search
+</h1>
+<%try {%>
+<form action = "/search" method ="post">
+    Id: <input type ="number" id ='id' name ="id" value = '<%= id %>' >
+    <button> Search</button><br/>
+</form>
+Emp name : <%= ename %> <br/>
+Job: <%= job%> <br/>
+Salary: <%= salary %> <br/>
+<% }catch(error){
+    console.log(error);
+}%>
