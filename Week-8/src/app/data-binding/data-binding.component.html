@@ -1,0 +1,57 @@
+<p>data-binding works!</p>
+
+{{x}}
+
+<div>
+    <h2>Controller to View</h2>
+
+    <h3> UserName : {{customerObj.name}}</h3>
+    <h3> UserCode : {{customerObj.code}}</h3>
+    <h3> Amount : {{customerObj.amount}}</h3>
+
+
+    <h2>Interpolation to Model to view</h2>
+
+    <h3>UserName : {{customer.CustomerCode}}</h3>
+    <h3>userCode : {{customer.CustomerName}}</h3>
+    <h3>Amount : {{customer.CustomerAmount}}</h3>
+
+    <hr/>
+
+    <h2>One way binding Interpolation</h2>
+    one way biding happen from model to View
+    <p>UserCode: <input type ="text" name = "CustomerCode" value = "{{customer.CustomerCode}}" /></p>
+    <p>UserName: <input type ="text" name = "CustomerName" value = "{{customer.CustomerName}}" /></p>
+    <p>Amount: <input type ="text" name = "CustomerAmount" value = "{{customer.CustomerAmount}}" /></p>
+
+    <button (click) = callMe() > Click Me </button>
+
+
+    <hr />
+
+    <h3> Two-Way Binding</h3>
+    <hr/>
+
+    <p>UserCode: <input type ="text" name = "CustomerCode" [(ngModel)] = "customer.CustomerCode" /></p>
+    <p>UserName: <input type ="text" name = "CustomerName" [(ngModel)] = "customer.CustomerName" /></p>
+    <p>Amount: <input type ="text" name = "CustomerAmount" [(ngModel)] = "customer.CustomerAmount" /></p>
+    <hr/>
+
+    <p>UserCode: <input type ="text" name = "CustomerCode" [(ngModel)] = "customer.CustomerCode" /></p>
+    <p>UserName: <input type ="text" name = "CustomerName" [(ngModel)] = "customer.CustomerName" /></p>
+    <p>Amount: <input type ="text" name = "CustomerAmount" [(ngModel)] = "customer.CustomerAmount" /></p>
+
+
+    <p [ngClass]="{redBorder:true}"> This is styling</p>
+
+    <hr />
+    <app-lifecycle *ngIf = "!delete" [bindable]="boundValue">
+        <p>{{test1}}</p> 
+    </app-lifecycle>
+
+    <button (click)="delete = true">Click to Delete</button>
+    <button (click) = "test1= 'ChangeValue'">Click to Change Value</button>
+
+    <button (click) = "boundValue =500">Click to change binding</button>
+    
+</div>
