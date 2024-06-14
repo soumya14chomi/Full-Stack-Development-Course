@@ -1,0 +1,41 @@
+employees = [
+    {id:1,ename:"Kiran",job:"Trainer",salary:5500},    
+    {id:2,ename:"Anil",job:"Developer",salary:5200},    
+    {id:3,ename:"Sunil",job:"Programmer",salary:4500},    
+    {id:4,ename:"Swathi",job:"Trainer",salary:5900}
+];
+
+module.exports.employees =employees;
+
+var empMod = require("./empModule");
+
+module.exports = function(app){
+    app.get('/exports', function(request, response){
+        response.json({msg : "Hello!! From Different File"});
+    });
+
+    app.get('/exports/employees', function(request, response){
+        response.json(employees);
+    });
+    app.get('/exports/getEmployee/:id', function(request, response){
+        var eId = request.params.id;
+        console.log(eId);
+        var e ={};
+        for(var i of empMod){
+            if(i.id == eId){
+                console.log(i);
+                e = i;
+                break;
+            }
+        }
+        response.json(e);
+    });
+
+    var path = require("path");
+
+    app.get('/exports/getfile', function(request, response){
+        response.sendFile(path.join(__dirname+"/index.html"));
+    });
+
+    
+}

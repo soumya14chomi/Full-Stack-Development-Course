@@ -1,0 +1,23 @@
+<h1>List of Employees for CRUD Operations</h1>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Ename</th>
+        <th>Job</th>
+        <th>Salary</th>
+    </tr>
+    <% for ( let e of employees ){ %>
+    <tr>
+        <td> <%= e.id %> </td>   
+        <td> <%= e.ename %> </td>   
+        <td> <%= e.job %> </td>   
+        <td> <%= e.salary %> </td>   
+    </tr>
+    <%}%>
+</table>
+
+<a href = "getByID">Fetch Employee</a><br/>
+<a href = "deleteById"> Delete Employee</a> <br/>
+<a href= "addEmployee"> Add Employee</a>  <br/>
+<a href="fetchAll"> Employee List</a> <br/>
+<a href="/"> Home</a>

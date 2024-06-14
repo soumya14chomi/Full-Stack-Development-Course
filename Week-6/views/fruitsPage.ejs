@@ -1,0 +1,15 @@
+<h1> List Of Fruits</h1>
+
+<ol>
+    <% 
+    console.log(fruits);
+    try{
+        for (var fruit of fruits){
+            %> 
+            <li> <%= fruit %> <br/></li>
+            <%
+        }
+    }catch(err){
+        console.log(err);
+    }%>
+</ol>

@@ -1,0 +1,18 @@
+<h1>
+    Employee Delete
+</h1>
+<h2> <%= msg %></h2>
+<form action = "/deleteById" method ="post">
+    Id: <input type ="number" id ='id' name ="id" value = '<%= emp.id %>' >
+    <button> Delete</button><br/>
+</form>
+
+Emp name : <%= emp.ename %> <br/>
+Job: <%= emp.job%> <br/>
+Salary: <%= emp.salary %> <br/>
+
+<a href = "getByID">Fetch Employee</a><br/>
+<a href = "deleteById"> Delete Employee</a> <br/>
+<a href= "addEmployee"> Add Employee</a>  <br/>
+<a href="fetchAll"> Employee List</a><br/>
+<a href="/"> Home</a>

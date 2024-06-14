@@ -1,0 +1,22 @@
+<h1>
+    Employee Insertion
+</h1>
+<h2> <%= msg %></h2>
+<form action = "/addEmployee" method ="post">
+    Id: <input type ="number" id ='id' name ="id" value = '<%= emp.id %>' > <br/>
+    Name: <input type ="text" id = 'name' name ="name" value = '<%= emp.ename %>'> <br/>
+    Salary: <input type = "number" id ="salary" name = "salary" value = '<%= emp.salary %>'> <br/>
+    Job : <input type = "text" id ="job" name ="job" value = '<%= emp.job %>'> <br/>
+    <br/>
+    <button> Add </button><br/>
+</form>
+Emp Id : <%= emp.id %> <br/>
+Emp name : <%= emp.ename %> <br/>
+Job: <%= emp.job%> <br/>
+Salary: <%= emp.salary %> <br/>
+
+<a href = "getByID">Fetch Employee</a><br/>
+<a href = "deleteById"> Delete Employee</a><br/>
+<a href= "addEmployee"> Add Employee</a><br/><br/>
+<a href="fetchAll"> Employee List</a> <br/>
+<a href="/"> Home</a>
